@@ -125,13 +125,12 @@ public class ConfigurationController : BaseJellyfinApiController
     /// </summary>
     /// <response code="200">Branding configuration returned.</response>
     /// <returns>Branding configuration.</returns>
-    [HttpGet("Configuration/branding")]
+    [HttpGet("Configuration/Branding")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public ActionResult<BrandOptionsDto> GetBrandingConfiguration()
     {
         var brandingOptions = (BrandingOptions)_configurationManager.GetConfiguration("branding");
 
-        // Map BrandingOptions to BrandOptionsDto
         var brandOptionsDto = new BrandOptionsDto
         {
             LoginDisclaimer = brandingOptions.LoginDisclaimer,
@@ -148,7 +147,7 @@ public class ConfigurationController : BaseJellyfinApiController
     /// <param name="configuration">Branding configuration.</param>
     /// <response code="204">Branding configuration updated.</response>
     /// <returns>Update status.</returns>
-    [HttpPost("Configuration/branding")]
+    [HttpPost("Configuration/Branding")]
     [Authorize(Policy = Policies.RequiresElevation)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public ActionResult UpdateBrandingConfiguration([FromBody, Required] BrandOptionsDto configuration)
@@ -161,7 +160,6 @@ public class ConfigurationController : BaseJellyfinApiController
         currentBranding.CustomCss = configuration.CustomCss;
         currentBranding.SplashscreenEnabled = configuration.SplashscreenEnabled;
 
-        // Save the updated configuration
         _configurationManager.SaveConfiguration("branding", currentBranding);
 
         return NoContent();

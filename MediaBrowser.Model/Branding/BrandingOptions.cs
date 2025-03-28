@@ -25,8 +25,5 @@ public class BrandingOptions
     /// <summary>
     /// Gets or sets the splashscreen location on disk.
     /// </summary>
-    /// <remarks>
-    /// Only used to save the custom uploaded user splashscreen in the configuration file.
-    /// </remarks>
     public string? SplashscreenLocation { get; set; }
 }
