@@ -5,6 +5,10 @@ namespace MediaBrowser.Model.Branding;
 /// <summary>
 /// The branding options.
 /// </summary>
+/// <remarks>
+/// This class is for internal server use. For API operations, use <see cref="BrandOptionsDto"/> instead
+/// to prevent unintended updates to the SplashscreenLocation property.
+/// </remarks>
 public class BrandingOptions
 {
     /// <summary>
