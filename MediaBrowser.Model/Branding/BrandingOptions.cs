@@ -1,14 +1,8 @@
-using System.Text.Json.Serialization;
-
 namespace MediaBrowser.Model.Branding;
 
 /// <summary>
 /// The branding options.
 /// </summary>
-/// <remarks>
-/// This class is for internal server use. For API operations, use <see cref="BrandOptionsDto"/> instead
-/// to prevent unintended updates to the SplashscreenLocation property.
-/// </remarks>
 public class BrandingOptions
 {
     /// <summary>
@@ -32,9 +26,7 @@ public class BrandingOptions
     /// Gets or sets the splashscreen location on disk.
     /// </summary>
     /// <remarks>
-    /// Not served via the API.
     /// Only used to save the custom uploaded user splashscreen in the configuration file.
     /// </remarks>
-    [JsonIgnore]
     public string? SplashscreenLocation { get; set; }
 }
