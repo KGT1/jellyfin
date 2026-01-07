@@ -36,8 +36,7 @@ public class BrandingController : BaseJellyfinApiController
         var brandingOptionsDto = new BrandingOptionsDto
         {
             LoginDisclaimer = brandingOptions.LoginDisclaimer,
-            CustomCss = brandingOptions.CustomCss,
-            SplashscreenEnabled = brandingOptions.SplashscreenEnabled
+            CustomCss = brandingOptions.CustomCss
         };
 
         return brandingOptionsDto;
