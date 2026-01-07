@@ -106,6 +106,7 @@ jobs:
           new-spec: openapi-head/openapi.json
           markdown: openapi-changelog.md
           add-pr-comment: true
+          circular-ref-mode: replace-allof
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
 
